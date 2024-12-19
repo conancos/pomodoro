@@ -13,9 +13,9 @@
     height: 100%;
     margin: 0 auto;
     /* user-select: none; */
-    outline: 24px solid #f253;
+    /* outline: 2px solid #f253; */
     border-radius: 32px;
-
+    /* border: 6px solid #000a; */
 
 
     .buttons-break {
@@ -26,13 +26,10 @@
         border-radius: 50px;
         /* border: 4px solid red; */
         /* outline: 5px solid #c24; */
-    
         position: relative;
-        bottom: 82px;   
+        bottom: 78px;   
         column-gap: 356px;
         
-        /* background: #00f2; */
-    
         display: flex;
         justify-content: center;
         align-items: center;
@@ -48,13 +45,12 @@
         /* outline: 6px solid #fff7; */
 
         position: relative;
+        bottom: 130px;
         
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        bottom: 130px;
 
         background: #55f5;
         backdrop-filter: blur(10px);
@@ -77,31 +73,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
     }
 
     
     .buttons-top,
     .buttons-bottom {
-        border-radius: 50%;
-
-        background: #05f4;
-        backdrop-filter: blur(5px);
         color: #000c;
         font-size: 1rem;
         font-weight: bold;
-        text-shadow: 0px 0px 4px purple;
-        cursor: pointer;
-        /* user-select: none; */
-        border: none;
-        /* outline: 4px solid #0afc; */
+        background: #05f4;
+
+        border-radius: 50%;
         border: 2px solid #0005;
+        backdrop-filter: blur(5px);
+        text-shadow: 0px 0px 4px purple;
+
+        /* user-select: none; */
+        /* outline: 4px solid #0afc; */
+
         box-shadow: 
-            0px 0px 8px 2px #0ff, 
-            0px 0px 16px 8px #0ff,
-            inset 2px 2px 4px 0px #fff, 
-            inset -3px -3px 4px 0px #000
+        0px 0px 8px 2px #0ff, 
+        0px 0px 16px 8px #0ff,
+        inset 2px 2px 4px 0px #fff, 
+        inset -3px -3px 4px 0px #000
         ;
+        cursor: pointer;
     }
 
     & .buttons-top {

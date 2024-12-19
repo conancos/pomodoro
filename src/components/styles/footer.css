@@ -1,0 +1,25 @@
+footer.footer {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; /*No se porqué pero parte el texto*/
+    text-align: center;
+    font-size: clamp(.4rem, 2vw, 1rem); 
+    /* padding: .5rem; */
+    /* margin-top: .4rem; */
+    color: #fff;
+    font-weight: 600;
+    
+    & a:first-child {
+        color: crimson;
+        font-style: italic;
+        text-decoration: none;
+        &:hover {text-shadow: 0 0 2px crimson}
+    }
+    & a:last-child {
+        text-decoration: none;
+        color: #625ad8;
+        &:hover {text-shadow: 0 0 1px white}
+    }
+}
