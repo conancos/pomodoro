@@ -7,25 +7,32 @@ const Clock = () => {
         <div className="clock">
         
             <div className="buttons-break">
-            <button id="break-decrement" className="buttons-top">➖</button>
-            <button id="break-increment" className="buttons-top">➕</button>
+                <button id="break-decrement" className="buttons-top">➖</button>
+                <button id="break-increment" className="buttons-top">➕</button>
             </div>
 
-            <div className="counters">
-                <div>
-                <h2 id="break-label">TIME BREAK</h2>
-                <p id="break-length">5</p>
+            
+            <div className="sphere-big">
+
+                <div className="break">
+                    <p id="break-length">5</p>
+                    <p id="break-label">TIME BREAK</p>
                 </div>
-                
-                <div>
-                <h2 id="session-label">SESSION</h2>
-                <p id="session-length">25</p>
+
+                <div className="timer">
+                    <p id="timer-label">SESSION</p>
+                    <p id="time-left">25:00</p>
+                </div>
+
+                <div className="session">
+                    <p id="session-label">TIME POMODORO</p>
+                    <p id="session-length">25</p>
                 </div>
             </div>
             
             <div className="buttons-session">
-            <button id="session-decrement" className="buttons-bottom">➖</button>
-            <button id="session-increment" className="buttons-bottom">➕</button>
+                <button id="session-decrement" className="buttons-bottom">➖</button>
+                <button id="session-increment" className="buttons-bottom">➕</button>
             </div>
       
         </div>
