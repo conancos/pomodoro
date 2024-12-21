@@ -1,4 +1,5 @@
 import './styles/clock.css'
+import './styles/panel.css'
 
 const Clock = () => {
     
@@ -34,7 +35,16 @@ const Clock = () => {
                 <button id="session-decrement" className="buttons-bottom">➖</button>
                 <button id="session-increment" className="buttons-bottom">➕</button>
             </div>
-      
+
+            <div className="panel">
+                <button id="reset" className="button-reset">RESET</button>
+                <div className="start-stop">
+                    <label className="label-start-stop" htmlFor="start_stop">START/STOP
+                        <input id="start_stop" type="checkbox" />
+                    </label>
+                </div> 
+            </div>
+
         </div>
     )
 }
