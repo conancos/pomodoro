@@ -91,8 +91,30 @@
                 0 0 25px 8px #00f,
                 0 0 50px 10px #0ff, /*animar con más potencia*/
                 0 0 70px 15px #00f,
-                inset 2px 4px 5px 3px #fff7,
-                inset -2px -4px 6px 4px #000c;           
+                inset 2px 2px 5px 3px #fff7,
+                inset -2px -4px 6px 4px #000c;
+
+            transition: box-shadow .2s ease-in-out, bottom .2s linear;
+        }
+        #start_stop:checked ~ .label-start-stop {
+            font-size: .9rem;
+            font-weight: bold;
+            letter-spacing: .5px;
+            
+            
+            /* background-image: linear-gradient(135deg, #0002 0%, #00a2 33%, #0052 66%, #0002 100%); */
+            box-shadow: 
+                0 0 15px 5px #0ff,
+                0 0 25px 8px #00f,
+                0 0 60px 15px #0ff, /*animar con más potencia*/
+                0 0 90px 25px #00f,
+                /* inset 1px 1px 2px 2px #fff7, */
+                inset 0px 0px 2px 2px #0005,
+                /* inset 0px 2px 8px 4px #0007, */
+                inset -0px -0px 4px 2px #000;
+                border: 5px solid #0005;
+            /* border: 7px solid #000a; */
+            
         }
     }
 }

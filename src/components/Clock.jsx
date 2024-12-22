@@ -39,9 +39,8 @@ const Clock = () => {
             <div className="panel">
                 <button id="reset" className="button-reset">RESET</button>
                 <div className="start-stop">
-                    <label className="label-start-stop" htmlFor="start_stop">START/STOP
-                        <input id="start_stop" type="checkbox" />
-                    </label>
+                    <input id="start_stop" type="checkbox" />
+                    <label className="label-start-stop" htmlFor="start_stop">START/STOP</label>
                 </div> 
             </div>
 
