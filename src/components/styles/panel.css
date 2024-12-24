@@ -33,19 +33,34 @@
         
         border-radius: 50%;
         border: 5px solid #000c;
-        outline: 8px solid #0ff;
+        outline: 8px solid #0ff1;
         backdrop-filter: blur(5px);
 
         background: #55f4;
         background-image: linear-gradient(135deg, #0005 0%, #00f5 33%, #0095 66%, #0005 100%);
         box-shadow: 
-            0 0 16px 6px #0ff,
+            0 0 15px 5px #0ff,
             0 0 25px 8px #00f,
             0 0 50px 10px #0ff, /*animar con más potencia*/
             0 0 70px 15px #00f,
-            inset 2px 4px 5px 3px #fffa,
-            inset -2px -4px 6px 4px #000c;
-        
+            inset 1px 2px 4px 2px #fffa,
+            inset -2px -4px 6px 4px #000;
+        transition: box-shadow .2s ease, outline .1s ease, background .2s ease;
+
+        &:active {
+            font-size: .9rem;
+            letter-spacing: .5px;
+            background: #55f2;
+            box-shadow:
+                0 0 15px 5px #0ff,
+                0 0 25px 8px #00f,
+                0 0 60px 20px #0ff, /*animar con más potencia*/
+                0 0 90px 30px #00f,
+                inset -1px -1px 2px 1px #fff5, /**/
+                inset 0px 1px 4px 4px #000;
+            background-image: linear-gradient(135deg, #0007 0%, #00a7 33%, #0097 66%, #0007 100%);
+            outline: 8px solid #0ffc;
+        }
     }
 
 
@@ -81,7 +96,7 @@
 
             border-radius: 50%;
             border: 5px solid #000c;
-            outline: 8px solid #0ff;
+            outline: 8px solid #0ff1;
             backdrop-filter: blur(5px);
 
             background: #55f4;
@@ -91,32 +106,28 @@
                 0 0 25px 8px #00f,
                 0 0 50px 10px #0ff, /*animar con más potencia*/
                 0 0 70px 15px #00f,
-                inset 2px 2px 5px 3px #fff7,
-                inset -2px -4px 6px 4px #000c;
-
-            transition: box-shadow .2s ease-in-out, bottom .2s linear;
+                inset 1px 2px 4px 2px #fffa,
+                inset -2px -4px 6px 4px #000;
+            transition: box-shadow .2s ease, outline .1s ease, background .2s ease;
         }
+
         #start_stop:checked ~ .label-start-stop {
             font-size: .9rem;
             font-weight: bold;
             letter-spacing: .5px;
             
-            
-            background-image: linear-gradient(135deg, #0007 0%, #00a7 33%, #0097 66%, #0007 100%);
-            backdrop-filter: blur(7px);
+            background: #55f2;
             box-shadow: 
                 0 0 15px 5px #0ff,
                 0 0 25px 8px #00f,
-                0 0 60px 15px #0ff, /*animar con más potencia*/
-                0 0 90px 25px #00f,
-                /* inset 1px 1px 2px 2px #fff7, */
-                /* inset 1px 1px 2px 1px #fff7, */
-                inset 0px 0px 2px 2px #0005,
-                /* inset 0px 2px 8px 4px #0007, */
-                inset -0px -0px 4px 2px #000;
-                border: 5px solid #0005;
-            /* border: 7px solid #000a; */
-            
+                0 0 60px 20px #0ff, /*animar con más potencia*/
+                0 0 90px 30px #00f,
+                inset -1px -1px 2px 1px #fff5, /**/
+                inset 0px 1px 4px 4px #000;
+            background-image: linear-gradient(135deg, #0007 0%, #00a7 33%, #0097 66%, #0007 100%);
+            outline: 8px solid #0ffc;
+            /* transition: outline .2s linear; */
+            /* transform: origin 0 80%; */
         }
     }
 }
