@@ -1,12 +1,21 @@
 //import './styles/panel.css'
 
-const Panel = () => {
+const Panel = ({ handleStartStop, handleReset, timerOn }) => {
     return (
         <div className="panel">
-            <button id="reset" className="button-reset">RESET</button>
+            <button 
+                id="reset" 
+                className="button-reset"
+                onClick={handleReset}>RESET
+            </button>
             <div className="start-stop">
                 <input id="start_stop" type="checkbox" />
-                <label className="label-start-stop" htmlFor="start_stop">START/STOP</label>
+                <label 
+                    /* id="start-stop" */
+                    className="label-start-stop" 
+                    htmlFor="start_stop"
+                    onClick={handleStartStop}>{timerOn ? "STOP" : "START"}
+                </label>
             </div> 
         </div>
     )

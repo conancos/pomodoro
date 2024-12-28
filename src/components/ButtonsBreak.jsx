@@ -1,10 +1,21 @@
 //import './styles/clock.css'
 
-const ButtonsBreak = () => {
+const ButtonsBreak = ({ handleBreakDecrement, handleBreakIncrement }) => {
+    
     return (
         <div className='buttons-break'>
-            <button className='buttons-top' id='stop'>➖</button>
-            <button className='buttons-top' id='reset'>➕</button>
+            <button 
+                className='buttons-top' 
+                id='break-decrement'
+                onClick={handleBreakDecrement}
+            >➖
+            </button>
+            <button 
+                className='buttons-top' 
+                id='break-increment'
+                onClick={handleBreakIncrement}
+            >➕
+            </button>
         </div>
     )
 }
