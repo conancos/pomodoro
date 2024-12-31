@@ -65,14 +65,14 @@ const Clock = () => {
 
     const handleBreakIncrement = () => {
         /* setBreakLength((prev) => prev < 60 ? prev + 1 : prev); */
-        if (breakLength < 60/* && !timerOn */) {
+        if (breakLength < 60 && !timerOn) {
             setBreakLength((prev) => prev + 1);
         }
     };
         
     const handleBreakDecrement = () => {
         /* setBreakLength((prev) => prev > 1 ? prev - 1 : prev); */
-        if (breakLength > 1/* && !timerOn*/) {
+        if (breakLength > 1 && !timerOn) {
             setBreakLength((prev) => prev - 1);
         }
     };
