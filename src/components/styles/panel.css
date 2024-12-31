@@ -23,8 +23,9 @@
         height: 129px;
         font-size: 1rem;
         color: #000c;
+        color: #aff;
         font-weight: bold;
-        text-shadow: 0px 0px 4px purple;
+        /* text-shadow: 0px 0px 4px purple; */
         
         cursor: pointer;
         position: relative;
@@ -88,6 +89,7 @@
             justify-content: center;
 
             color: #000c;
+            color: #aff;
             font-size: 1rem;
             font-weight: bold;
             text-shadow: 0px 0px 4px purple;

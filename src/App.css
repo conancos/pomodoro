@@ -48,10 +48,10 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 32px;
   
-  width: 1550px;
-  max-width: 95%;
-  height: 900px;
-  max-height: 95dvh;
+  width: 95%;
+  max-width: 1550px;
+  height: 95dvh;
+  max-height: 900px;
   /* width: 95vw;
   height: 90dvh; */
   /* border: 10px solid #00f5; */
@@ -73,4 +73,106 @@ body {
     -10px -10px 24px 3px #000; */
   border-radius: 32px;
   
+}
+
+
+/* Responsive */
+
+@media (width < 510px) {
+  
+  #root, #root::before {
+    overflow: hidden;
+  }
+
+  .clock {
+    overflow: hidden !important;
+  }  
+
+  .clock .buttons-break {
+    justify-content: space-between !important;
+    column-gap: unset !important;
+    position: absolute !important;
+    top: 36px;
+    padding-inline: 5px !important;
+    z-index: 1;
+  }
+
+  .clock .sphere-big {
+    /* background: #7770 !important; */
+    overflow: hidden !important;
+    
+    position: absolute;
+    top: 30px;
+  }
+  
+  .clock .buttons-session {
+    justify-content: space-between !important;
+    margin-left: unset !important;
+    column-gap: unset !important;
+    top: 2px;
+    padding-inline: 2px !important;
+    z-index: 1; 
+  }
+
+  .clock .panel {
+    top: 6px;
+    /* column-gap: ; */
+    /* top: 70%; */
+    /* position: static; */
+  }
+}
+
+@media (width <= 470px) {
+  .clock .sphere-big {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+  }
+  .clock .panel {
+    justify-content: center;
+    position: relative;
+    /* left: -16px !important; */
+    margin: 0 auto;
+    text-align: center;
+  }  
+}
+
+/* Lo modificaré con javaScript + adelante */
+@media (width <= 455px) {
+  .clock .panel {
+    left: -3% !important;
+  }
+}
+@media (width <= 425px) {
+  .clock .panel {
+    left: -5% !important;
+  }
+}
+@media (width <= 375px) {
+  .clock .panel {
+    justify-content: space-between !important;
+    column-gap: 0 !important;
+  }
+  .clock .panel .start-stop {
+    left: -40px;
+    right: 0 !important;
+  }
+}
+@media (width <= 320px) {
+  .clock .panel .button-reset {
+    
+    left: -85px !important;
+  }
+}
+
+@media (height <= 880px) {
+  #root, #root::before {
+    overflow-y: hidden !important;
+    max-height: 100svh !important;
+  }
+  .clock .panel {
+    height: 150px !important;
+  }
 }

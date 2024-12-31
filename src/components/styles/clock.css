@@ -155,7 +155,7 @@
             }
             :last-child {
                 line-height: 1.2;
-                font-size: 7rem;
+                font-size: clamp(5rem, 10vw, 7rem);
                 color: #000;
                 -webkit-text-stroke: #0ff 2px;
                 font-family: monospace;
