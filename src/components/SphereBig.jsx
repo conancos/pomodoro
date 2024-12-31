@@ -1,9 +1,8 @@
 //import './styles/clock.css'
 import React, {useState} from 'react'
 
-const SphereBig = ({breakLength, sessionLength, timeLeft, onBreak}) => {
+const SphereBig = ({breakLength, sessionLength, timer, onBreak}) => {
 
-    
     return (
         <div className="sphere-big">
             <div className="break">
@@ -11,8 +10,14 @@ const SphereBig = ({breakLength, sessionLength, timeLeft, onBreak}) => {
                 <p id="break-label">TIME BREAK</p>
             </div>
             <div className="timer">
-                <p id="timer-label">{ onBreak ? 'BREAK' : 'SESSION' }</p>
-                <p id="time-left">{timeLeft}</p>
+                <p 
+                    id="timer-label"
+                    className={`${onBreak && "break-class-label"}`}>{ onBreak ? 'Break' : 'Session' }
+                </p>
+                <p 
+                    id="time-left" 
+                    className={`${onBreak && "break-class"}`}>{timer}
+                </p>
             </div>
             <div className="session">
                 <p id="session-label">TIME POMODORO</p>

@@ -149,7 +149,7 @@
                 font-family: Arial;
                 letter-spacing: 2px;
                 color: #aff;
-                text-shadow: 0 0 2px cyan;
+                text-shadow: 0px 0px 4px cyan;
                 /* text-shadow: 2px 1px 0px cyan, -1px -1px 0 black;*/
                 /* -webkit-text-stroke: #fff 1px; */
             }
@@ -159,6 +159,14 @@
                 color: #000;
                 -webkit-text-stroke: #0ff 2px;
                 font-family: monospace;
+            }
+            & .break-class-label {
+                color: lime;
+                text-shadow: 0 2px 4px black;
+            }
+            & .break-class {
+                color: #000;
+                -webkit-text-stroke: #0f0 2px;
             }
         }
         

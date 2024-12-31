@@ -7,7 +7,7 @@
     /* outline: 4px solid black; */
 
     position: relative;
-    bottom: 42px;
+    bottom: 44px;
     
     column-gap: 50px;
 
@@ -73,7 +73,7 @@
         left: 6px;
         bottom: 2px;
                 
-        & #start_stop {
+        & #input-start_stop {
             display: none;
         }
         
@@ -112,7 +112,8 @@
             transition: box-shadow .2s ease, outline .1s ease, background .2s ease;
         }
 
-        #start_stop:checked ~ .label-start-stop {
+        #input-start_stop:checked ~ .label-start-stop,
+        .label-start-stop:active {
             font-size: .9rem;
             font-weight: bold;
             letter-spacing: .5px;
