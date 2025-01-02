@@ -6,11 +6,11 @@ import Panel from './Panel'
 import './styles/clock.css'
 
 const Clock = () => {
+    const [onBreak, setOnBreak] = useState(false);
+    const [timerOn, setTimerOn] = useState(false);
     const [breakLength, setBreakLength] = useState(5);
     const [sessionLength, setSessionLength] = useState(25);
     const [timer, setTimer] = useState(25 * 60);
-    const [timerOn, setTimerOn] = useState(false);
-    const [onBreak, setOnBreak] = useState(false);
     const intervalRef = useRef(null);
     const audioRef = useRef(null);
     //const [isPaused, setIsPaused] = useState(false);
@@ -24,12 +24,11 @@ const Clock = () => {
                         return prevTimer - 1;
                     } else {
                         audioRef.current.play().catch((err) => console.log('Audio play error:', err));
-                        const nextOnBreak = !onBreak;
-                        setOnBreak(nextOnBreak);
+                        setOnBreak((prevBreak) => !prevBreak);
                         
                         setTimeout(() => {
-                            setTimer(nextOnBreak ? breakLength * 60 : sessionLength * 60);
-                        }, 1000);
+                            setTimer((onBreak ? sessionLength : breakLength) * 60);
+                        }, 0); //Sincronizamos después del cambio
                         return 0;
                     }
                 });
@@ -39,7 +38,7 @@ const Clock = () => {
         }
 
         return () => clearInterval(intervalRef.current);
-    }, [timerOn, onBreak, sessionLength, breakLength]);
+    }, [timerOn, sessionLength, breakLength, onBreak]);
 
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);

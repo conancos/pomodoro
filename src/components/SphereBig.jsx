@@ -12,11 +12,15 @@ const SphereBig = ({breakLength, sessionLength, timer, onBreak}) => {
             <div className="timer">
                 <p 
                     id="timer-label"
-                    className={`${onBreak && "break-class-label"}`}>{ onBreak ? 'Break' : 'Session' }
+                    className={`${onBreak && "break-class-label"}`}
+                >
+                    {onBreak ? "Break" : "Session"}
                 </p>
                 <p 
                     id="time-left" 
-                    className={`${onBreak && "break-class"}`}>{timer}
+                    className={`${onBreak && "break-class"}`}
+                >
+                    {timer}
                 </p>
             </div>
             <div className="session">
