@@ -1,8 +1,22 @@
-# React + Vite
+# Pomodoro Clock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!NOTE] 
+> Upcoming implementations:
+>
+> - _Youtube music lists_
+> - _Other alarm sounds_
+> - _Improve responsive design_
+> - _Interchange sphere for other displays_
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Thanks for watching**
+
+### https://conancos.dev/clock ↗
+
+<br>
+
+<img src="./public/Passed-29.png" alt="img clock" width="600px">
+
+
+##### <p>Copyright © 2024 <a href="https://www.linkedin.com/in/joaquin-martinez-cortes">CONANCOS.dev</a> - bajo licencia <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License v3.0</a></p>
