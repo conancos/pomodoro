@@ -1,4 +1,4 @@
-const ActionButtons = ({id, className, actionIncrement, actionDecrement, handleIncrement, handleDecrement, disabled}) => {
+const ActionButtons = ({id, className, actionIncrement, actionDecrement, handleIncrement, handleDecrement}) => {
 
     return (
         <div className={id}>
@@ -6,14 +6,12 @@ const ActionButtons = ({id, className, actionIncrement, actionDecrement, handleI
                 className={className}
                 id={actionDecrement}
                 onClick={handleDecrement}
-                disabled={disabled}
             >➖
             </button>
             <button
                 className={className}
                 id={actionIncrement}
                 onClick={handleIncrement}
-                disabled={disabled}
             >➕
             </button>
         </div>

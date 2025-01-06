@@ -13,23 +13,25 @@ const Clock = () => {
     const [timer, setTimer] = useState(25 * 60);
     const intervalRef = useRef(null);
     const audioRef = useRef(null);
-    //const [isPaused, setIsPaused] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
+    
 
     useEffect(() => {
-        
-        if (timerOn) {
+        if (timerOn && !isPaused) {
             intervalRef.current = setInterval(() => {
                 setTimer((prevTimer) => {
                     if (prevTimer > 0) {
                         return prevTimer - 1;
                     } else {
                         audioRef.current.play().catch((err) => console.log('Audio play error:', err));
-                        setOnBreak((prevBreak) => !prevBreak);
                         
+                        setOnBreak((prevBreak) => !prevBreak);
                         setTimeout(() => {
-                            setTimer((onBreak ? sessionLength : breakLength) * 60);
+                            setTimer(onBreak ? sessionLength * 60 : breakLength * 60);                            
                         }, 0); //Sincronizamos después del cambio
                         return 0;
+
+                        /* return onBreak ? sessionLength * 60 : breakLength * 60; */
                     }
                 });
             }, 1000);
@@ -38,12 +40,13 @@ const Clock = () => {
         }
 
         return () => clearInterval(intervalRef.current);
-    }, [timerOn, sessionLength, breakLength, onBreak]);
+    }, [timerOn, sessionLength, breakLength, onBreak, isPaused]);
 
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = time % 60;
         return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
         /* const padZero = (num) => (num < 10 ? `0${num}` : num);
         return `${padZero(minutes)}:${padZero(seconds)}`; */
     };
@@ -51,6 +54,7 @@ const Clock = () => {
     const handleReset = () => {
         clearInterval(intervalRef.current);
         setTimerOn(false);
+        setIsPaused(false);
         setOnBreak(false);
         setBreakLength(5);
         setSessionLength(25);
@@ -63,21 +67,27 @@ const Clock = () => {
     };
 
     const handleBreakIncrement = () => {
-        /* setBreakLength((prev) => prev < 60 ? prev + 1 : prev); */
-        if (breakLength < 60 && !timerOn) {
+        setBreakLength((prev) => prev < 60 ? prev + 1 : prev);
+        /* if (breakLength < 60 && !timerOn) {
             setBreakLength((prev) => prev + 1);
-        }
+            // if (onBreak) {
+            //    setTimer((prev) => prev + 60);
+            //}
+        } */
     };
         
     const handleBreakDecrement = () => {
-        /* setBreakLength((prev) => prev > 1 ? prev - 1 : prev); */
-        if (breakLength > 1 && !timerOn) {
+        setBreakLength((prev) => prev > 1 ? prev - 1 : prev);
+        /* if (breakLength > 1 && !timerOn) {
             setBreakLength((prev) => prev - 1);
-        }
+            // if (onBreak) {
+            //    setTimer((prev) => prev - 60);
+            //}
+        } */
     };
 
     const handleSessionIncrement = () => {
-        if (sessionLength < 60) {
+        if (sessionLength < 60 /* && !timerOn */) {
             setSessionLength((prev) => prev + 1);
             if (!onBreak) {
                 setTimer((prev) => prev + 60);
@@ -86,7 +96,7 @@ const Clock = () => {
       };
 
     const handleSessionDecrement = () => {
-        if (sessionLength > 1) {
+        if (sessionLength > 1 /* && !timerOn */) {
             setSessionLength((prev) => prev - 1);
             if (!onBreak) {
                 setTimer((prev) => prev - 60);
@@ -95,7 +105,14 @@ const Clock = () => {
     };
 
     const handleStartStop = () => {
-        setTimerOn((prev) => !prev);
+        /* setTimerOn((prev) => !prev); */
+        if (!timerOn) {
+            setTimerOn(true);
+            setIsPaused(false);
+            document.getElementById('input-start_stop').checked = false;
+        } else {
+            setIsPaused((prev) => !prev);
+        }
     };
 
     const handleAudioError = () => {

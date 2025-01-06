@@ -1,7 +1,15 @@
 //import './styles/clock.css'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 const SphereBig = ({breakLength, sessionLength, timer, onBreak}) => {
+    //const stringOfCount = onBreak ? "Break" : "Session"
+    const [stringOfCount, setStringOfCount] = useState(onBreak ? "Break" : "Session");
+    const [timerCount, setTimerCount] = useState(timer);
+
+    useEffect(() => {
+        setStringOfCount(onBreak ? "Break" : "Session");
+        setTimerCount(timer);
+    }, [onBreak, timer]);
 
     return (
         <div className="sphere-big">
@@ -14,13 +22,14 @@ const SphereBig = ({breakLength, sessionLength, timer, onBreak}) => {
                     id="timer-label"
                     className={`${onBreak && "break-class-label"}`}
                 >
-                    {onBreak ? "Break" : "Session"}
+                    {stringOfCount}
+                    {/* {onBreak ? "Break" : "Session"} */}
                 </p>
                 <p 
                     id="time-left" 
                     className={`${onBreak && "break-class"}`}
                 >
-                    {timer}
+                    {timerCount}
                 </p>
             </div>
             <div className="session">
